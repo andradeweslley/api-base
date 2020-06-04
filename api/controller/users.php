@@ -234,39 +234,4 @@ class UsersController
         
         return ['statusCode' => 204, 'data' => []];
     }
-    
-    /**
-     * Função para beber água
-     * @param int   $userId
-     * @param array $obj
-     * @return array
-     * @throws ApiException
-     */
-    private function drinkWater(int $userId, array $obj): array {
-        $resourceDrinkFields = [
-            'drink_ml' => [
-                'required' => true,
-                'type' => 'integer',
-                'value' => null,
-            ],
-        ];
-    
-        $resourceDrinkFields = Utils::handleDataReceived($resourceDrinkFields, $this->method, $obj);
-        
-        if (!$this->userModel->userIsActive(['id_user' => $userId])) {
-            ApiResponse::handleErrorsResponse(
-                404,
-                'UserNotFound',
-                'Usuário não encontrado'
-            );
-        }
-        
-        ApiHandle::loadModel('Drink');
-        
-        $drinkModel = new DrinkModel();
-        
-        $drinkModel->drinkWater($userId, $resourceDrinkFields['drink_ml']['value']);
-        
-        return $this->getOne($userId);
-    }
 }
