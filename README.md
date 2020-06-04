@@ -1,6 +1,9 @@
 # Descrição da API
 Objetivo de facilitar o desenvolvimento e validação dos dados para uma API RESTFul.
 
+## Dependencias
+Essa API utiliza o firebase/JWT, para adicionado utilize `api/controller/users.php`
+
 ## Configuração da API
 Na pasta `/api/config` existe o arquivo `database.php` nele coloque as informações de conexão ao banco de dados.
 
