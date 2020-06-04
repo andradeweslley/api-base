@@ -2,7 +2,7 @@
 Objetivo de facilitar o desenvolvimento e validação dos dados para uma API RESTFul.
 
 ## Dependencias
-Essa API utiliza o firebase/JWT, para adicionado utilize `composer require firebase/php-jwt`
+Essa API utiliza o firebase/JWT, para adiciona-lo ao projeto utilize `composer require firebase/php-jwt`
 
 ## Configuração da API
 Na pasta `/api/config` existe o arquivo `database.php` nele coloque as informações de conexão ao banco de dados.
